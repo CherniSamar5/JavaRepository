@@ -38,6 +38,8 @@ public class Main {
 
         System.out.println("on remarque qu'on doit  inserer les variables directement dans un  constructeur paramétré car celui implicite" +
                 "devient non definie si on definit un autre  paramétré c'est la notion surcharge  ");
+        System.out.println(" on doit créer un constructeur vide");
+
 
 
 
