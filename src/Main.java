@@ -32,13 +32,18 @@ public class Main {
         System.out.println(myZoo);*/
 
         Animal [] animals = {lion , tigre};
-        Zoo myZoo = new Zoo("Tunisia Zoo", "Tunisia", 1);
+        Zoo myZoo = new Zoo("Tunisia Zoo", "Tunisia", 4);
         myZoo.animals = animals;
-        System.out.println(myZoo);
+        System.out.println(myZoo.displayZoo());
+        //System.out.println(myZoo); affiche l'adresse
+        //System.out.println(myZoo.toString());
 
-        System.out.println("on remarque qu'on doit  inserer les variables directement dans un  constructeur paramétré car celui implicite" +
+
+        System.out.println("\ninstruction 6 : on remarque qu'on doit  inserer les variables directement dans un  constructeur paramétré car celui implicite" +
                 "devient non definie si on definit un autre  paramétré c'est la notion surcharge  ");
-        System.out.println(" on doit créer un constructeur vide");
+        System.out.println("\ninstruction 7 : on doit créer un constructeur vide");
+        System.out.println("\ninstruction 8 : on remarque l'affichage de l'adresse (adresse du pointage) du zoo car on a pas redifinie la methode to string ");
+
 
 
 
