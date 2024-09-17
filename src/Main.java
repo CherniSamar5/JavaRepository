@@ -34,9 +34,9 @@ public class Main {
         Animal [] animals = {lion , tigre};
         Zoo myZoo = new Zoo("Tunisia Zoo", "Tunisia", 4);
         myZoo.animals = animals;
-        System.out.println(myZoo.displayZoo());
-        //System.out.println(myZoo); affiche l'adresse
-        //System.out.println(myZoo.toString());
+        //System.out.println(myZoo.displayZoo());
+        System.out.println(myZoo);
+        System.out.println(myZoo.toString());
 
 
         System.out.println("\ninstruction 6 : on remarque qu'on doit  inserer les variables directement dans un  constructeur paramétré car celui implicite" +

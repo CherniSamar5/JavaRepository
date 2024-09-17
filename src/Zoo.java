@@ -24,7 +24,7 @@ public class Zoo {
     }
 
 
-    /*@Override
+    @Override
     public String toString(){
         String [] nameOfAnimals = new String[animals.length] ;
         int index = 0  ;
@@ -33,8 +33,8 @@ public class Zoo {
             index++;
         }
         return  "Name of zoo : " + name + " ,the city : " + city + " ,number of cages : " + nbrCages + " ,has as animals : " + Arrays.toString(nameOfAnimals) ;
-    }*/
-    public String displayZoo(){
+    }
+   /* public String displayZoo(){
         String [] nameOfAnimals = new String[animals.length] ;
         int index = 0  ;
         for (Animal myAnimal : animals){
@@ -43,5 +43,5 @@ public class Zoo {
         }
         return  "Name of zoo : " + name + " ,the city : " + city + " ,number of cages : " + nbrCages + " ,has as animals : " + Arrays.toString(nameOfAnimals) ;
 
-    }
+    }*/
 }
