@@ -5,8 +5,8 @@ public class Main {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
 
-        /*
-        Animal lion = new Animal();
+
+        /*Animal lion = new Animal();
         lion.family = "big lions";
         lion.name = "myLion";
         lion.age = 12;
@@ -18,8 +18,8 @@ public class Main {
         myZoo.name = "myZoo";
         myZoo.city = "Tunis";
         myZoo.nbrCages = 12;
-        System.out.println("the Zoo is :  \n" + myZoo);
-        */
+        System.out.println("the Zoo is :  \n" + myZoo);*/
+
         Animal lion = new Animal("big lions" , "myLion" , 12 , true);
         Animal tigre = new Animal("big Tigre" , "myTigre" , 3 , true);
 
@@ -27,10 +27,17 @@ public class Main {
         System.out.println("the tigre is :  \n" + tigre);
         System.out.println("****************************************************");
 
-        Animal [] animals = {lion , tigre};
+        /*Animal [] animals = {lion , tigre};
         Zoo myZoo = new Zoo(animals, "Tunisia Zoo", "Tunisia", 6);
+        System.out.println(myZoo);*/
+
+        Animal [] animals = {lion , tigre};
+        Zoo myZoo = new Zoo("Tunisia Zoo", "Tunisia", 1);
+        myZoo.animals = animals;
         System.out.println(myZoo);
 
+        System.out.println("on remarque qu'on doit  inserer les variables directement dans un  constructeur paramétré car celui implicite" +
+                "devient non definie si on definit un autre  paramétré c'est la notion surcharge  ");
 
 
 
