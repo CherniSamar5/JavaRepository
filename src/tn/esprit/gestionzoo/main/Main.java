@@ -1,3 +1,7 @@
+package tn.esprit.gestionzoo.main;
+import tn.esprit.gestionzoo.entities.*;
+
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -6,19 +10,19 @@ public class Main {
         // to see how IntelliJ IDEA suggests fixing it.
 
 
-        /*Animal lion = new Animal();
+        /*tn.esprit.gestionzoo.entities.Animal lion = new tn.esprit.gestionzoo.entities.Animal();
         lion.family = "big lions";
         lion.name = "myLion";
         lion.age = 12;
         lion.isMammal = true;
         System.out.println("the lion is :  \n" + lion);
         System.out.println("****************************************************");
-        Zoo myZoo = new Zoo();
-        myZoo.animals = new Animal[]{lion};
+        tn.esprit.gestionzoo.entities.Zoo myZoo = new tn.esprit.gestionzoo.entities.Zoo();
+        myZoo.animals = new tn.esprit.gestionzoo.entities.Animal[]{lion};
         myZoo.name = "myZoo";
         myZoo.city = "Tunis";
         myZoo.nbrCages = 12;
-        System.out.println("the Zoo is :  \n" + myZoo);*/
+        System.out.println("the tn.esprit.gestionzoo.entities.Zoo is :  \n" + myZoo);*/
 
         Animal lion = new Animal("big lions" , "myLion" , 12 , true);
         Animal tigre = new Animal("big Tigre" , "myTigre" , 3 , true);
@@ -33,17 +37,19 @@ public class Main {
         //System.out.println("the tigre is :  \n" + tigre);
         System.out.println("****************************************************");
 
-        Zoo myZoo = new Zoo("Tunisia Zoo", "Tunisia");
-        Zoo dahdah = new Zoo("California Zoo", "California");
+        Zoo myZoo = new Zoo("", "Tunisia");
+        Zoo dahdah = new Zoo("California zoo", "California");
         dahdah.addAnimal(cow);
 
-        myZoo.addAnimal(lion);
-        myZoo.addAnimal(lion);
-        myZoo.addAnimal(tigre);
-        myZoo.addAnimal(giraffe);
-        myZoo.addAnimal(dog);
-        myZoo.addAnimal(cat);
-        myZoo.addAnimal(cow);
+       if(!(myZoo.getName() == null)){
+           myZoo.addAnimal(lion);
+           myZoo.addAnimal(lion);
+           myZoo.addAnimal(tigre);
+           myZoo.addAnimal(giraffe);
+           myZoo.addAnimal(dog);
+           myZoo.addAnimal(cat);
+           myZoo.addAnimal(cow);
+       }
 
 
         System.out.print(myZoo.displayZoo());
@@ -69,8 +75,8 @@ public class Main {
         /*
         System.out.println(myZoo);*/
 
-        /*Animal [] animals = {lion , tigre};
-        Zoo myZoo = new Zoo("Tunisia Zoo", "Tunisia", 4);
+        /*tn.esprit.gestionzoo.entities.Animal [] animals = {lion , tigre};
+        tn.esprit.gestionzoo.entities.Zoo myZoo = new tn.esprit.gestionzoo.entities.Zoo("Tunisia tn.esprit.gestionzoo.entities.Zoo", "Tunisia", 4);
         myZoo.animals = animals;
         //System.out.println(myZoo.displayZoo());
         System.out.println(myZoo);

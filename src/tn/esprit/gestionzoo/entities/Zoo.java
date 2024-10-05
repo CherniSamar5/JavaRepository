@@ -1,21 +1,70 @@
+package tn.esprit.gestionzoo.entities;
+
 import java.util.Arrays;
 
 public class Zoo {
 
-    Animal [] animals ;
-    String name ;
-    String city ;
-    final int nbrCages ;
-    int nbAnimal = 0;
+    protected Animal [] animals ;
+    protected String name;
+    protected String city ;
+    protected final int nbrCages ;
+    protected int nbAnimal = 0;
     private final int MAX_ANIMALS = 5;
 
 
-    Zoo(String name , String city ){
+    public Animal[] getAnimals() {
+        return animals;
+    }
+
+    public void setAnimals(Animal[] animals) {
+        this.animals = animals;
+    }
+
+    public int getNbAnimal() {
+        return nbAnimal;
+    }
+
+    public void setNbAnimal(int nbAnimal) {
+        this.nbAnimal = nbAnimal;
+    }
+
+    public int getNbrCages() {
+        return nbrCages;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if(name.isEmpty()){
+            System.out.println("Nom est vide ! donner autre");
+        }else{
+            this.name = name;
+        }
+    }
+
+    public Zoo(String name , String city ){
         this.nbrCages = MAX_ANIMALS;
-        animals = new Animal[nbrCages] ;
-        this.name = name ;
-        this.city = city ;
-        nbAnimal = 0;
+        if(name.isEmpty()){
+            System.out.println("Nom est vide ! donner autre");
+        } else
+        {
+
+            this.name = name;
+            this.city = city ;
+            animals = new Animal[nbrCages] ;
+            nbAnimal = 0;
+        }
+
 
 
     }
@@ -48,12 +97,12 @@ public class Zoo {
         return  "Name of zoo : " + name + " ,the city : " + city + " ,number of cages : " + nbrCages + " ,has as animals : " + Arrays.toString(nameOfAnimals) ;
     }
 
-    boolean addAnimal(Animal animal){
+    public boolean addAnimal(Animal animal){
         if(this.searchAnimal(animal.name) != -1){
             System.out.println(animal.name + " est déjà dans le zoo");
             return false;
         }
-        if (this.nbAnimal < this.nbrCages) {
+        if (! this.isZooFull()) {
             animals[nbAnimal] = animal;
             nbAnimal ++;
             System.out.println("yes added");
@@ -83,7 +132,7 @@ public class Zoo {
     }
 
 
-    boolean removeAnimal(Animal animal) {
+    public boolean removeAnimal(Animal animal) {
         int index = this.searchAnimal(animal.name);
         System.out.println("Index found: " + index);
 
