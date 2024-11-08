@@ -150,7 +150,7 @@ public class Main {
         } catch (ZooFullException e) {
             System.out.println(e.getMessage());
         } finally {
-            System.out.println(toZoo.getName() + " contient " + toZoo.getNbAnimal() + " animaux");
+            System.out.println(toZoo.getName() + " contient : " + toZoo.getNbAnimal() + " animaux");
         }
 
 
