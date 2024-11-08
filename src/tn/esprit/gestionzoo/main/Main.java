@@ -1,5 +1,6 @@
 package tn.esprit.gestionzoo.main;
 import tn.esprit.gestionzoo.entities.*;
+import tn.esprit.gestionzoo.enums.Food;
 import tn.esprit.gestionzoo.exceptions.InvalidAgeException;
 import tn.esprit.gestionzoo.exceptions.ZooFullException;
 
@@ -98,7 +99,7 @@ public class Main {
         Terrestrial terrestrial = new Terrestrial();
         Dolphin dolphin = new Dolphin();
         Penguin penguin = new Penguin();*/
-        Zoo toZoo = new Zoo("california zoo","california");
+        Zoo toZoo = new Zoo("california zoo", "california");
         //Aquatic aquatic2 = new Aquatic("big fish" , "myFish" , 12 , true,"mer" );
         /*Terrestrial terrestrial2 = new Terrestrial("big lions" , "myLion" , 12 , true,12);
         Dolphin dolphin2 = new Dolphin("big dauphin" , "myDauphin" , 12 , true, "mer" , 12);
@@ -132,12 +133,12 @@ public class Main {
         System.out.println(penguin2.equals(penguin2));
         System.out.println(penguin3.equals(penguin2));*/
 
-        Animal lion = new Animal("big lions" , "myLion" , 12 , true);
-        Animal tigre = new Animal("big Tigre" , "myTigre" , 3 , true);
-        Animal giraffe = new Animal("big Giraffe" , "myGiraffe" , 5 , true);
-        Animal dog = new Animal("big dog" , "myDog" , 9 , true);
-        Animal cat = new Animal("big cat" , "mycat" , 9 , true);
-        Animal cow = new Animal("big cow" , "myCow" , 9 , true);
+        Animal lion = new Animal("big lions", "myLion", 12, true);
+        Animal tigre = new Animal("big Tigre", "myTigre", 3, true);
+        Animal giraffe = new Animal("big Giraffe", "myGiraffe", 5, true);
+        Animal dog = new Animal("big dog", "myDog", 9, true);
+        Animal cat = new Animal("big cat", "mycat", 9, true);
+        Animal cow = new Animal("big cow", "myCow", 9, true);
 
         try {
             lion.setAge(8);
@@ -161,5 +162,26 @@ public class Main {
         } finally {
             System.out.println(toZoo.getName() + " contient " + toZoo.getNbAnimal() + " animaux");
         }
+
+        Aquatic shark = new Aquatic("Fish", "Great White Shark", 7, false, "Ocean") {
+            @Override
+            public void swim() {
+            }
+        };
+
+        Penguin emperorPenguin = new Penguin("Bird", "Emperor Penguin", 4, false, "Antarctica", 15.0f);
+        Terrestrial elephant = new Terrestrial("Mammal", "Elephant", 25, true, 4);
+
+        shark.eatMeat(Food.MEAT);
+        shark.eatMeat(Food.PLANT);
+
+        emperorPenguin.eatMeat(Food.MEAT);
+        emperorPenguin.eatMeat(Food.PLANT);
+
+        elephant.eatPlant(Food.PLANT);
+        elephant.eatMeat(Food.MEAT); // Expected to reject, as elephant typically doesn't eat meat
+        elephant.eatPlantAndMeat(Food.BOTH);
     }
+
+
 }
