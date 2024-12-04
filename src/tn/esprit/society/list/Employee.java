@@ -1,14 +1,14 @@
-package tn.esprit.society.entities;
+package tn.esprit.society.list;
 
 import java.util.Objects;
 
-public class employee {
+public class Employee implements Comparable<Employee> {
 
     int id;
     String name,lastName,depName;
     int grade;
 
-    public employee(int id, String name, String lastName, String depName, int grade) {
+    public Employee(int id, String name, String lastName, String depName, int grade) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
@@ -16,7 +16,7 @@ public class employee {
         this.grade = grade;
     }
 
-    public employee() {
+    public Employee() {
     }
 
     public int getId() {
@@ -62,7 +62,7 @@ public class employee {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof employee employee)) return false;
+        if (!(o instanceof Employee employee)) return false;
         return getId() == employee.getId() && Objects.equals(getName(), employee.getName());
     }
 
@@ -75,6 +75,11 @@ public class employee {
                 ", depName='" + depName + '\'' +
                 ", grade=" + grade +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Employee e) {
+        return Integer.compare(this.id, e.id);
     }
 
 }
