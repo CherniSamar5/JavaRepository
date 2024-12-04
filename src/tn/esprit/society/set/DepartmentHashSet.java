@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class SocieteHashSet implements IDepartement<Departement> {
+public class DepartmentHashSet implements IDepartement<Departement> {
 
     Set<Departement> departements = new HashSet<>();
 
